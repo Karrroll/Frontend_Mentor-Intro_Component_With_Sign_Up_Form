@@ -17,3 +17,15 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+.font-regular { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
