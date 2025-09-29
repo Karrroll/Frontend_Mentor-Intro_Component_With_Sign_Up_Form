@@ -107,4 +107,41 @@ input {
 
 
 
+/* ---(over 751px)--- */
 
+@media (min-width: 751px) {
+  
+body {
+  flex-direction: row;
+  column-gap: 50px;
+}
+
+section {
+  min-width: 320px;
+  max-width: 500px; 
+}
+
+.hero .hero-description {
+  width: 100%;
+  text-align: left;
+}
+
+.hero .hero-title {
+  font-size: 2.75rem;
+  text-align: left;
+}
+
+.signup-form {
+  padding: 35px;
+}
+
+.signup-form p {
+  font-size: 0.65rem;
+}
+
+.signup p.signup-offer {
+  font-size: 0.85rem;
+  padding: 15px auto;
+}
+
+}
