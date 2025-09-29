@@ -103,10 +103,11 @@ p .terms-red-color {
   color: #FF7A7A;
 }
 
-input {
+.signup-input {
   padding: 0 20px;
   border: 1.5px solid #CCCCCC;
   border-radius: 0.4rem;
+  caret-color: #000000;
 }
 
 
