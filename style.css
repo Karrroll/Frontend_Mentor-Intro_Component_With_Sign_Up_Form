@@ -8,13 +8,17 @@
 .poppins {
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  color: #FFFFFF;
+  color: #000000;
   font-size: 16px;
 }
 
 .font-medium { font-weight: 500; }
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
+
+.white-text {
+  color: #FFFFFF;
+}
 
 body {
   background-image: url(./images/bg-intro-mobile.png);
