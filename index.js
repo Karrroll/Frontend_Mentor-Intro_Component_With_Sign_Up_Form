@@ -1,3 +1,5 @@
 $(".signup-input").on("focus", function() {
-  $(this).val("");
+  $(this).on("keydown", function(event) {
+    $(this).text(event.key);
+  });
 });
