@@ -92,7 +92,7 @@ section {
   opacity: 0.75;
 }
 
-.signup-form p {
+.signup-terms {
   font-size: 0.75rem;
   line-height: 1.75;
   color: #B9B6D3;
@@ -105,13 +105,31 @@ p .terms-red-color {
 
 .signup-input {
   padding: 0 20px;
-  border: 1.5px solid #CCCCCC;
+  border: 2px solid #CCCCCC;
   border-radius: 0.4rem;
+  color: black !important;
   caret-color: #000000;
 }
 
+.empty-signup-input {
+  border: 2px solid #FF7A7A;
+  background-image: url(./images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  color: #FF7A7A !important;
+}
 
+.empty-signup-input::placeholder {
+  color: transparent;
+}
 
+.empty-signup-notification {
+  position: relative;
+  margin-top: -10px;  /* flex-gap = 15px */
+  font-size: 0.75rem;
+  color: #FF7A7A;
+  text-align: right;
+}
 /* ---(over 751px)--- */
 
 @media (min-width: 751px) {
@@ -140,7 +158,7 @@ section {
   padding: 35px;
 }
 
-.signup-form p {
+.signup-terms {
   font-size: 0.65rem;
 }
 
