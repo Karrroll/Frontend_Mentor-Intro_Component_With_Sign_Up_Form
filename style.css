@@ -81,7 +81,7 @@ section {
   text-align: center;
 }
 
-.signup p.signup-offer {
+.signup h2.signup-offer {
   background-color: var(--color-primary-blue);
   border-radius: var(--border-radius-sm);
   margin-top: 40px;
@@ -100,7 +100,7 @@ section {
   row-gap: 15px;
 }
 
-.signup-form *:not(p) {
+.signup-form *:not(h2) {
   height: clamp(40px, 6vh, 50px);
 }
 
@@ -188,7 +188,7 @@ section {
   font-size: 0.65rem;
 }
 
-.signup p.signup-offer {
+.signup h2.signup-offer {
   font-size: 0.85rem;
 }
 
