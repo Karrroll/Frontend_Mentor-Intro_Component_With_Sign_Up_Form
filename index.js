@@ -1,34 +1,12 @@
-/* error element creator */
-function addNotification(input) {
-  var inputName = input.name;
-  var fieldName;
-
-  switch(inputName) {
-    case("first-name"):
-      fieldName = "First Name";
-      break;
-    case("last-name"):
-      fieldName = "Last Name";
-      break;
-    case("email-address"):
-      fieldName = "Email Address";
-      break;
-    case("password"):
-      fieldName = "Password";
-      break;
-    default:
-      fieldName = "Not Found";
+/* error message creator */
+function getNotification(input) {
+  switch(input.name) {
+    case("first-name"):     return "First Name cannot be empty";
+    case("last-name"):      return "Last Name cannot be empty";
+    case("email-address"):  return "Email Address cannot be empty";
+    case("password"):       return "Password cannot be empty";
+    default:                return "Field cannot be empty";
   }
-
-  return `${fieldName} cannot be empty`;
-}
-
-function createErrorElement(errorMessage) {
-  var errorElement = document.createElement("p");
-  errorElement.className = "empty-signup-notification";
-  errorElement.textContent = errorMessage;
-
-  return errorElement;
 }
 /* ------------------------------------------------------- */
 
@@ -37,25 +15,28 @@ function isFieldEmpty(fieldContent) {
 }
 
 function clearInputError(input) {
-  input.classList.remove("empty-signup-input");
+  if(input.classList.contains("empty-signup-input"))
+    input.classList.remove("empty-signup-input");
 
-  if (input.nextElementSibling && input.nextElementSibling.classList.contains("empty-signup-notification")) 
-    input.nextElementSibling.remove();
+  var spanElement = input.nextElementSibling;
+  if (spanElement && spanElement.classList.contains("empty-signup-notification")) 
+    spanElement.textContent = "";
 }
 
 function showEmptyFieldError(input) {
   input.classList.add("empty-signup-input");
 
-  var errorMessage = addNotification(input);
-  input.after(createErrorElement(errorMessage));
+  var spanElement = input.nextElementSibling;
+  if (spanElement && spanElement.classList.contains("empty-signup-notification")) 
+    spanElement.textContent = getNotification(input);
 }
 
 function showInvalidEmailError(input) {
-  input.setAttribute("placeholder", input.value);
   input.classList.add("empty-signup-input");
 
-  var errorMessage = "Looks like this is not an email";
-  input.after(createErrorElement(errorMessage));
+  var spanElement = input.nextElementSibling;
+  if (spanElement && spanElement.classList.contains("empty-signup-notification")) 
+    spanElement.textContent = "Looks like this is not an email";
 }
 
 /* Event handlers */ 
@@ -71,7 +52,9 @@ document.querySelectorAll(".signup-input").forEach(function(input) {
   });
 });
 
-document.querySelector(".signup-button").addEventListener("click", function() {
+document.querySelector(".signup-button").addEventListener("click", function(e) {
+  e.preventDefault();
+  
   document.querySelectorAll(".signup-input").forEach(function(input) {
     clearInputError(input);
 

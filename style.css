@@ -5,6 +5,20 @@
   box-sizing: border-box;
 }
 
+/* screen reader class*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* custom properties */
 :root {
   --color-primary-red: #FF7A7A;
   --color-primary-green: #38CC8C;
@@ -36,6 +50,7 @@
   color: var(--color-text-white);
 }
 
+/* main styles */
 body {
   background-image: url(./images/bg-intro-mobile.png);
   background-repeat: no-repeat;
@@ -67,21 +82,23 @@ section {
   width: 100%;
 }
 
-.hero .hero-description {
+/* hero section styles */
+.hero-description {
   width: 95%;
   margin: 0 auto;
   color: var(--color-text-light-gray);
   text-align: center;
 }
 
-.hero .hero-title {
+.hero-title {
   font-size: 1.75rem;
   line-height: 1.2;
   margin-bottom: 25px;
   text-align: center;
 }
 
-.signup h2.signup-offer {
+/* form section styles */
+.signup-offer {
   background-color: var(--color-primary-blue);
   border-radius: var(--border-radius-sm);
   margin-top: 40px;
@@ -100,7 +117,13 @@ section {
   row-gap: 15px;
 }
 
-.signup-form *:not(h2) {
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form input, 
+.signup-form button {
   height: clamp(40px, 6vh, 50px);
 }
 
@@ -149,15 +172,19 @@ p .terms-red-color {
   color: transparent;
 }
 
+.empty-signup-notification:empty {
+  display: none;
+}
+
 .empty-signup-notification {
   position: relative;
-  margin-top: -10px;  /* flex-gap = 15px */
+  margin-top: 5px;
   font-size: 0.75rem;
   color: var(--color-primary-red);
   text-align: right;
 }
-/* ---(over 751px)--- */
 
+/* ---(over 751px)--- */
 @media (min-width: 751px) {
 
 .main-page {
@@ -170,12 +197,12 @@ section {
   max-width: 500px; 
 }
 
-.hero .hero-description {
+.hero-description {
   width: 100%;
   text-align: left;
 }
 
-.hero .hero-title {
+.hero-title {
   font-size: 2.75rem;
   text-align: left;
 }
@@ -188,7 +215,8 @@ section {
   font-size: 0.65rem;
 }
 
-.signup h2.signup-offer {
+.signup-offer {
+  margin-top: 0;
   font-size: 0.85rem;
 }
 
