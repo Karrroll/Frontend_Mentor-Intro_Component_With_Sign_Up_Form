@@ -50,7 +50,7 @@
   color: var(--color-text-white);
 }
 
-/* main styles */
+/* body & main styles */
 body {
   background-image: url(./images/bg-intro-mobile.png);
   background-repeat: no-repeat;
@@ -97,7 +97,7 @@ section {
   text-align: center;
 }
 
-/* form section styles */
+/* signup section styles */
 .signup-offer {
   background-color: var(--color-primary-blue);
   border-radius: var(--border-radius-sm);
@@ -172,16 +172,33 @@ p .terms-red-color {
   color: transparent;
 }
 
-.empty-signup-notification:empty {
-  display: none;
-}
-
 .empty-signup-notification {
   position: relative;
   margin-top: 5px;
   font-size: 0.75rem;
   color: var(--color-primary-red);
   text-align: right;
+}
+
+.empty-signup-notification:empty {
+  display: none;
+}
+
+/* active/focus states */
+.signup-input:focus {
+  outline: 3px solid var(--color-primary-blue);
+  outline-offset: 2px;
+  border-color: var(--color-primary-blue);
+}
+
+.signup-button:focus {
+  outline: 3px solid var(--color-primary-green);
+  outline-offset: 2px;
+}
+
+.signup-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px rgba(45, 163, 112, 0.85);
 }
 
 /* ---(over 751px)--- */
