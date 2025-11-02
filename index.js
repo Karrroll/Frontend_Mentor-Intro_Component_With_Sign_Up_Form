@@ -18,7 +18,7 @@ function clearInputError(input) {
   if(input.classList.contains("empty-signup-input"))
     input.classList.remove("empty-signup-input");
 
-  var spanElement = input.nextElementSibling;
+  const spanElement = input.nextElementSibling;
   if (spanElement && spanElement.classList.contains("empty-signup-notification")) 
     spanElement.textContent = "";
 }
@@ -26,7 +26,7 @@ function clearInputError(input) {
 function showEmptyFieldError(input) {
   input.classList.add("empty-signup-input");
 
-  var spanElement = input.nextElementSibling;
+  const spanElement = input.nextElementSibling;
   if (spanElement && spanElement.classList.contains("empty-signup-notification")) 
     spanElement.textContent = getNotification(input);
 }
@@ -34,7 +34,7 @@ function showEmptyFieldError(input) {
 function showInvalidEmailError(input) {
   input.classList.add("empty-signup-input");
 
-  var spanElement = input.nextElementSibling;
+  const spanElement = input.nextElementSibling;
   if (spanElement && spanElement.classList.contains("empty-signup-notification")) 
     spanElement.textContent = "Looks like this is not an email";
 }

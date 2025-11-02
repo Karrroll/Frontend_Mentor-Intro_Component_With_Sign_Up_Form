@@ -22,8 +22,10 @@
 :root {
   --color-primary-red: #FF7A7A;
   --color-primary-green: #38CC8C;
-  --color-primary-green-shadow: rgba(45, 163, 112, 0.85);
+  --color-primary-green-shadow: 0 5px rgba(45, 163, 112, 0.85);
+  --color-primary-green-light-shadow: 0 2px rgba(45, 163, 112, 0.85);
   --color-primary-blue: #5D55A5;
+  --color-primary-blue-shadow: 0 7.5px rgba(0, 0, 0, 0.15);
   
   --color-text-white: #FFFFFF;
   --color-text-light-gray: #EEEEEE;
@@ -37,9 +39,6 @@
   
   --border-radius-sm: 0.4rem;
   --border-radius-md: 0.5rem;
-  
-  --shadow-sm: 0 5px rgba(45, 163, 112, 0.85);
-  --shadow-md: 0 7.5px rgba(0, 0, 0, 0.15);
 }
 
 .font-medium { font-weight: 500; }
@@ -104,7 +103,7 @@ section {
   margin-top: 40px;
   padding: 20px 50px;
   text-align: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--color-primary-blue-shadow);
 }
 
 .signup-form {
@@ -133,7 +132,7 @@ section {
   border: none;
   text-transform: uppercase;
   color: var(--color-input-bg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--color-primary-green-shadow);
   cursor: pointer;
 }
 
@@ -156,8 +155,6 @@ p .terms-red-color {
   padding: 0 20px;
   border: 2px solid var(--color-border-gray);
   border-radius: var(--border-radius-sm);
-  color: var(--color-text-black) !important;
-  caret-color: var(--color-text-black);
 }
 
 .empty-signup-input {
@@ -165,7 +162,7 @@ p .terms-red-color {
   background-image: url(./images/icon-error.svg);
   background-repeat: no-repeat;
   background-position: right 20px center;
-  color: var(--color-primary-red) !important;
+  color: var(--color-primary-red);
 }
 
 .empty-signup-input::placeholder {
@@ -198,7 +195,7 @@ p .terms-red-color {
 
 .signup-button:active {
   transform: translateY(2px);
-  box-shadow: 0 3px rgba(45, 163, 112, 0.85);
+  box-shadow: var(--color-primary-green-light-shadow);
 }
 
 /* ---(over 751px)--- */
